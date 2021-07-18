@@ -21,6 +21,7 @@ class ProductController extends Controller
         $price_from = $request->input('price_from');
         $price_to = $request->input('price_to');
 
+        // Get SPECIFIC Product
         if ($id) 
         {
             $product = Product::with(['category', 'galleries'])->find($id);
@@ -39,5 +40,35 @@ class ProductController extends Controller
                 );
             }
         }
+
+        // Get ALL Product
+        $product = Product::with(['category', 'galleries']);
+
+        // Filter & Paginate
+        if ($name) 
+        {
+            $product->where('name', 'like', '%'. $name. '%');
+        }
+        if ($description) 
+        {
+            $product->where('description', 'like', '%'. $description. '%');
+        }
+        if ($tags) 
+        {
+            $product->where('tags', 'like', '%'. $tags. '%');
+        }
+        if ($price_from) 
+        {
+            $product->where('price', '>=', $price_from);
+        }
+        if ($price_to)
+        {
+            $product->where('price', '>=', $price_to);
+        }
+        // Menampilkan Data
+        return ResponseFormatter::success(
+            $product->paginate($limit),
+            'Data Produk Berhasil Diambil'
+        );
     }
 }

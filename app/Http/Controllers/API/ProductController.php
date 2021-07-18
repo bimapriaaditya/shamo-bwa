@@ -63,7 +63,7 @@ class ProductController extends Controller
         }
         if ($price_to)
         {
-            $product->where('price', '>=', $price_to);
+            $product->where('price', '<=', $price_to);
         }
         // Menampilkan Data
         return ResponseFormatter::success(

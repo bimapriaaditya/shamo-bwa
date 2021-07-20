@@ -87,4 +87,12 @@ class UserController extends Controller
             ], "Authentication Failed");
         }
     }
+
+    public function fetch(Request $request)
+    {
+        return ResponseFormatter::success(
+            $request->user(),
+            'Data User Berhasil Diambil'
+        );
+    }
 }

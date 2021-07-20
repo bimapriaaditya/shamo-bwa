@@ -6,6 +6,7 @@ use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Exception;
+use Illuminate\Http\Middleware\CheckResponseForModifications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -93,6 +94,24 @@ class UserController extends Controller
         return ResponseFormatter::success(
             $request->user(),
             'Data User Berhasil Diambil'
+        );
+    }
+    
+    public function updateProfile(Request $request)
+    {
+        $data = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:255'],
+        ]);
+
+        $user = Auth::user();
+        $user->update($data);
+
+        return ResponseFormatter::success(
+            $user,
+            'Profile Updated'
         );
     }
 }

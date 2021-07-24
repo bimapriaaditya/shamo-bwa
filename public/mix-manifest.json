@@ -1,4 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/vendors/datatables.net-jqui": "/vendors/datatables.net-jqui",
+    "/vendors/datatables.net-responsive/js/dataTables.responsive.js": "/vendors/datatables.net-responsive/js/dataTables.responsive.js",
+    "/vendors/datatables.net-responsive/js/dataTables.responsive.min.js": "/vendors/datatables.net-responsive/js/dataTables.responsive.min.js",
+    "/vendors/jquery/dist/jquery.js": "/vendors/jquery/dist/jquery.js",
+    "/vendors/jquery/dist/jquery.min.js": "/vendors/jquery/dist/jquery.min.js",
+    "/vendors/jquery/dist/jquery.min.map": "/vendors/jquery/dist/jquery.min.map",
+    "/vendors/jquery/dist/jquery.slim.js": "/vendors/jquery/dist/jquery.slim.js",
+    "/vendors/jquery/dist/jquery.slim.min.js": "/vendors/jquery/dist/jquery.slim.min.js",
+    "/vendors/jquery/dist/jquery.slim.min.map": "/vendors/jquery/dist/jquery.slim.min.map"
 }

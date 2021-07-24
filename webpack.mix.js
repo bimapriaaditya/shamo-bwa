@@ -12,6 +12,12 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .copy('node_modules/datatables.net-jqui',
+         'public/vendors/datatables.net-jqui')
+    .copy('node_modules/datatables.net-responsive/js',
+         'public/vendors/datatables.net-responsive/js')
+    .copy('node_modules/jquery/dist',
+         'public/vendors/jquery/dist')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),

@@ -19,5 +19,10 @@
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
         "tailwindcss": "^2.2.2"
+    },
+    "dependencies": {
+        "datatables.net-jqui": "^2.1.1",
+        "datatables.net-responsive": "^2.2.9",
+        "jquery": "^3.6.0"
     }
 }
